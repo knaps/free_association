@@ -52,7 +52,7 @@ fields = {
 class Free(dict):
 
     def __init__(self):
-        with open('free_association.txt') as f:
+        with open('free_association.txt', encoding='latin1') as f:
             self.fields = [x.strip() for x in f.readline().split(',')]
             db = [dict(zip(self.fields, [y.strip() for y in x.split(',')]))
                   for x in f.readlines()]
